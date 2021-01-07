@@ -1,0 +1,22 @@
+Scala Functions
+
+when you need loops, use recursion. This is functional programming style.
+
+Its ok to not specify fucntion return type unless u use recursive fucntion.
+But its a bad practice
+
+def aFunction(a: String, b: Int): String = {
+    a + " " + b
+}
+
+def aFunction(a: String, b: Int): String = a + " " + b
+
+
+// Function with side effects. Meaning fucntions can return Unit  
+def aFunctionWithSideEffects(aString: String): Unit = println(aString)
+
+// Also use codeblock in fucntion to define another function
+def aBigFunction(n: Int): Int = {
+  def aSmallerFunction(a: Int, b: Int): Int = a + b
+    aSmallerFunction(n, n-1)
+}

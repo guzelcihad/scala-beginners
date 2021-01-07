@@ -1,0 +1,14 @@
+
+WHEN YOU NEED LOOPS, USE _TAIL_ RECURSION.
+
+A tail-recursive function describes a function whose last action is a direct call to itself. 
+When recursive functions are written this way, 
+the Scala compiler can optimize the resulting 
+JVM bytecode such that the function requires only one stack frame, 
+as opposed to one stack frame for each level of recursion.
+
+Regular recursion creates lots of stack frames, and for algorithms that 
+require deep levels of recursion, this creates a StackOverflowError (and crashes your program).
+
+When the Scala compiler spots a tail-recursive function, it knows
+ to optimize it by essentially turning it into a while loop. This means there are no more recursive calls and no more frames pushed onto the stack.
